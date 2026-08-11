@@ -13,7 +13,7 @@ import Testimonials from "./components/Testimonials";
 import WhatsAppButton from "./components/WhatsAppButton";
 import ConsultForm from "./components/ConsultForm";
 import Footer from "./components/Footer";
-import BackToTop from "./components/BacktoTop";
+import BackToTop from "./components/BackToTop";
 
 
 
