@@ -1,5 +1,5 @@
 import FontLoader from "./components/FontLoader";
-import TopBar from "./components/Topbar";
+import TopBar from "./components/TopBar";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import Ticker from "./components/Ticker";
