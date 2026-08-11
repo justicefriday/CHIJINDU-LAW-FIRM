@@ -1,6 +1,6 @@
 import FontLoader from "./components/FontLoader";
-import Topbar from "./components/Topbar";
-import Navbar from "./components/Navbar";
+import TopBar from "./components/Topbar";
+import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import Ticker from "./components/Ticker";
 import TrustBar from "./components/TrustBar";
@@ -22,8 +22,8 @@ export default function App() {
   return (
     <div className="font-sans">
       <FontLoader />
-      <Topbar />
-      <Navbar />
+      <TopBar />
+      <NavBar />
       <Hero />
       <Ticker /> 
       <TrustBar />

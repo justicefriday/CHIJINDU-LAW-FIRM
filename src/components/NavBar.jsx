@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { practiceLinks, navLinks } from "../data/navigation";
 
-export default function Navbar() {
+export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobilePracticeOpen, setMobilePracticeOpen] = useState(false);
