@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { ddPackages, locationsCovered } from "../data/dueDiligence";
+import DueDiligenceBookingModal from "./DueDiligenceBookingModal";
 
 export default function DueDiligence() {
+  const [bookingPackageId, setBookingPackageId] = useState(null);
+
   return (
     <section id="due-diligence" className="bg-brand-navyDark py-16 sm:py-20 lg:py-[100px]">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
@@ -16,25 +19,35 @@ export default function DueDiligence() {
           </h2>
           <p className="font-body text-[1.05rem] sm:text-[1.1rem] text-brand-ivory/65 max-w-[640px] mx-auto">
             Before you sign, invest, or seal the deal — verify every claim
-            about the property, legally and physically. Our dedicated due
-            diligence packages cover root of title tracing and on-the-ground
-            investigation in all parts of Nigeria.
+            about the property, legally and physically. Pick a package below
+            to see the price, turnaround, and book in one step.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-px">
           {ddPackages.map((pkg) => (
-            <DDCard key={pkg.title} pkg={pkg} />
+            <DDCard
+              key={pkg.id}
+              pkg={pkg}
+              onSelect={() => setBookingPackageId(pkg.id)}
+            />
           ))}
         </div>
 
         <LocationsCovered />
       </div>
+
+      {bookingPackageId && (
+        <DueDiligenceBookingModal
+          initialPackageId={bookingPackageId}
+          onClose={() => setBookingPackageId(null)}
+        />
+      )}
     </section>
   );
 }
 
-function DDCard({ pkg }) {
+function DDCard({ pkg, onSelect }) {
   return (
     <div
       className={`relative p-8 sm:p-9 border transition-all duration-300 ${
@@ -51,10 +64,7 @@ function DDCard({ pkg }) {
       <div className="text-[0.68rem] tracking-[0.15em] uppercase text-brand-gold mb-4">
         {pkg.location}
       </div>
-      <h3 className="font-display text-[1.4rem] text-brand-ivory mb-4">{pkg.title}</h3>
-      <div className="font-display font-bold text-[2rem] text-brand-gold mb-1">
-        {pkg.price}
-      </div>
+      <h3 className="font-display text-[1.4rem] text-brand-ivory mb-2">{pkg.title}</h3>
       <div className="text-[0.72rem] text-brand-ivory/50 mb-7">{pkg.priceNote}</div>
 
       <ul className="mb-8 space-y-0">
@@ -69,20 +79,16 @@ function DDCard({ pkg }) {
         ))}
       </ul>
 
-      <div className="text-[0.72rem] text-brand-ivory/50 mb-6">
-        Turnaround: <strong className="text-brand-goldLt">{pkg.turnaround}</strong>
-      </div>
-
-      <a
-        href="#consult"
-        className={`block text-center text-[0.78rem] font-semibold tracking-widest uppercase px-6 py-4 no-underline transition-all duration-300 ${
+      <button
+        onClick={onSelect}
+        className={`w-full text-center text-[0.78rem] font-semibold tracking-widest uppercase px-6 py-4 transition-all duration-300 ${
           pkg.featured
             ? "bg-brand-gold text-brand-navyDark hover:bg-brand-goldLt"
             : "bg-transparent text-brand-ivory border border-brand-gold/60 hover:bg-brand-gold/10 hover:border-brand-gold"
         }`}
       >
         {pkg.ctaLabel}
-      </a>
+      </button>
     </div>
   );
 }

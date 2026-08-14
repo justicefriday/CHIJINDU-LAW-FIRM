@@ -1,9 +1,11 @@
 export const ddPackages = [
   {
+    id: "standard",
     location: "Lagos & Ogun",
     title: "Standard Due Diligence",
-    price: "₦850,000",
     priceNote: "Per property · Diaspora clients welcome",
+    price: "₦850,000",
+    turnaround: "5–7 working days",
     features: [
       "Root of title investigation (full chain)",
       "Land Registry search",
@@ -13,15 +15,16 @@ export const ddPackages = [
       "Title document review",
       "Written report & briefing call",
     ],
-    turnaround: "5–7 working days",
-    ctaLabel: "Book This Package",
     featured: false,
+    ctaLabel: "Book This Package",
   },
   {
+    id: "comprehensive",
     location: "Lagos · Abuja · Asaba · Port Harcourt",
     title: "Comprehensive Due Diligence",
-    price: "₦1,200,000",
     priceNote: "Per property · All states covered",
+    price: "₦1,200,000",
+    turnaround: "3–5 working days",
     features: [
       "Full root of title tracing (from original grant)",
       "Multi-registry search (Land, Probate, Court)",
@@ -33,15 +36,16 @@ export const ddPackages = [
       "Zoom briefing with lead counsel",
       "Post-report advisory on next steps",
     ],
-    turnaround: "3–5 working days",
-    ctaLabel: "Book This Package",
     featured: true,
+    ctaLabel: "Book This Package",
   },
   {
+    id: "enterprise",
     location: "All 36 States",
     title: "Enterprise / Portfolio",
-    price: "Bespoke",
     priceNote: "Multiple properties · Developer pricing",
+    price: "Bespoke — quoted per instruction",
+    turnaround: "Agreed per instruction",
     features: [
       "All Comprehensive package features",
       "Multi-property volume pricing",
@@ -51,9 +55,8 @@ export const ddPackages = [
       "Integrated financial planning (via SHM)",
       "Annual portfolio legal audit",
     ],
-    turnaround: "Agreed per instruction",
-    ctaLabel: "Request a Proposal",
     featured: false,
+    ctaLabel: "Request a Proposal",
   },
 ];
 
