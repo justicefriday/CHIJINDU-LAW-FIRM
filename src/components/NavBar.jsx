@@ -408,7 +408,7 @@ function Logo() {
     >
       {/* ACTUAL LOGO FROM PUBLIC */}
       <img
-        src="/logo.png"
+        src="/logo.jpeg"
         alt="The Chijindu Law Firm logo"
         className="
           w-[38px]
