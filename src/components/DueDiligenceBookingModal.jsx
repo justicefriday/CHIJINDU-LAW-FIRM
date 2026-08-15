@@ -137,7 +137,7 @@ export default function DueDiligenceBookingModal({ initialPackageId, onClose }) 
                 onClick={handleSubmit}
                 className="w-full text-center text-[0.78rem] font-semibold tracking-widest uppercase px-8 py-4 bg-brand-gold text-brand-navyDark transition-all duration-300 hover:bg-brand-goldLt mt-6"
               >
-                Confirm Booking — {pkg.price}
+                Confirm Booking
               </button>
             </div>
           </>
