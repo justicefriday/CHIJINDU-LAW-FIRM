@@ -1,6 +1,6 @@
 export const trustStats = [
-  { num: "20+", label: "Years of Combined Experience" },
-  { num: "500+", label: "Successful Property Transactions" },
+  { num: "45+", label: "Years of Combined Experience" },
+  { num: "3000+", label: "Successful Property Transactions" },
   { num: "36", label: "States — National Coverage" },
   { num: "4.9★", label: "Average Client Rating" },
 ];

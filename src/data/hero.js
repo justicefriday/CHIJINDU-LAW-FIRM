@@ -16,8 +16,8 @@ export const hero = {
 // If value is null, the stat renders as static text (no counter) — for
 // things like "₦B" that aren't really a countable number.
 export const heroStats = [
-  { value: 20, suffix: "+", label: "Years of Practice" },
-  { value: 500, suffix: "+", label: "Transactions Closed" },
+  { value: 36, suffix: "+", label: "Years of Practice" },
+  { value: 3000, suffix: "+", label: "Transactions Closed" },
   { value: 4, suffix: "", label: "Major Cities Served" },
   { value: null, staticText: "₦B", label: "In Assets Protected" },
 ];

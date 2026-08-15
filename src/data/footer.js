@@ -28,11 +28,11 @@ export const firmLinks = [
 export const contactBlocks = [
   {
     icon: "📍",
-    lines: ["Asaba (Head Office)", "No. 1 Chijindu Chambers,", "Asaba, Delta State, Nigeria"],
+    lines: ["Abuja (Head Office)", "suite B7,Tsukunda House,Central Business District,Abuja, Nigeria"],
     bold: 0, // index of the line rendered bold
   },
-  { icon: "📞", lines: ["+234 800 000 0000"] },
-  { icon: "✉️", lines: ["consult@chijindulaw.com"] },
+  { icon: "📞", lines: ["+234 79 650 055 13"] },
+  { icon: "✉️", lines: ["info@cchijindu.com"] },
   { icon: "🕐", lines: ["Mon – Fri: 8am – 6pm WAT"] },
 ];
 

@@ -2,12 +2,12 @@
 // a phone number, link, or label never means touching JSX.
 
 export const contact = {
-  address: "No. 1 Chijindu Chambers, Asaba, Delta State",
-  alsoServing: "Also serving Lagos · Abuja · Port Harcourt",
-  phoneDisplay: "+234 800 000 0000",
-  phoneHref: "tel:+2348000000000",
-  email: "consult@chijindulaw.com",
-  whatsappNumber: "2348000000000", // digits only, country code first, no + or spaces
+  address: "suite B7,Tsukunda House,Central Business District,Abuja, Nigeria",
+  alsoServing: "Also serving Lagos · Asaba· Port Harcourt",
+  phoneDisplay: "+2347965005513",
+  phoneHref: "tel:+2347965005513",
+  email: "info@cchijindu.com",
+  whatsappNumber: "+2347062900507", // digits only, country code first, no + or spaces
   whatsappMessage:
     "Hello, I'd like to book a consultation with The Chijindu Law Firm.",
 };

@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { practiceLinks, navLinks } from "../data/navigation";
@@ -383,6 +382,14 @@ export default function NavBar() {
 
 /* =========================================================
    RESPONSIVE LOGO
+   Fix applied: the firm name previously had whitespace-nowrap with
+   no max-width/truncate fallback. On phones narrower than ~360px
+   (iPhone SE and similar), the name + icon + hamburger together
+   don't fit, and since the text couldn't wrap OR truncate, it would
+   overflow the nav and could push the hamburger off-screen. Adding
+   a responsive max-width + truncate makes it ellipsize gracefully
+   on the smallest screens instead, while looking identical from
+   ~380px up where it always fit fine anyway.
 ========================================================= */
 
 function Logo() {
@@ -396,93 +403,70 @@ function Logo() {
         sm:gap-3
         no-underline
         min-w-0
-        flex-1
-        xl:flex-none
+        shrink
       "
     >
-      {/* LOGO MARK */}
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 40 40"
-        className="shrink-0"
-        aria-hidden="true"
-      >
-        <circle
-          cx="20"
-          cy="20"
-          r="19"
-          fill="none"
-          stroke="#C4A95C"
-          strokeWidth="1.5"
-        />
+      {/* ACTUAL LOGO FROM PUBLIC */}
+      <img
+        src="/logo.png"
+        alt="The Chijindu Law Firm logo"
+        className="
+          w-[38px]
+          h-[38px]
+          sm:w-[40px]
+          sm:h-[40px]
+          md:w-[42px]
+          md:h-[42px]
+          shrink-0
+          object-contain
+        "
+      />
 
-        <circle
-          cx="20"
-          cy="20"
-          r="15.5"
-          fill="#0D1F3C"
-          stroke="#C4A95C"
-          strokeWidth="0.75"
-        />
-
-        <text
-          x="20"
-          y="25"
-          textAnchor="middle"
-          fontFamily="'Playfair Display', serif"
-          fontWeight="700"
-          fontSize="13"
-          fill="#C4A95C"
-        >
-          TCF
-        </text>
-      </svg>
-
-      {/* LOGO TEXT */}
+      {/* LAW FIRM NAME */}
       <span
         className="
           flex
           flex-col
           justify-center
-          leading-tight
           min-w-0
-          max-w-[220px]
-          sm:max-w-[300px]
-          md:max-w-[360px]
-          xl:max-w-none
+          leading-tight
         "
       >
-        {/* FIRM NAME */}
         <span
           className="
+            block
+            truncate
+            max-w-[150px]
+            min-[380px]:max-w-[190px]
+            sm:max-w-none
             font-display
             font-bold
-            text-[0.88rem]
-            xs:text-[0.95rem]
-            sm:text-[1.1rem]
-            md:text-[1.15rem]
-            xl:text-[1.05rem]
+            text-[0.8rem]
+            min-[380px]:text-[0.86rem]
+            sm:text-[1.05rem]
+            md:text-[1.1rem]
             text-brand-ivory
-            break-words
           "
         >
           The Chijindu Law Firm
         </span>
 
-        {/* SUBTITLE */}
         <span
           className="
+            block
+            truncate
+            max-w-[150px]
+            min-[380px]:max-w-[190px]
+            sm:max-w-none
             text-[0.5rem]
-            sm:text-[0.55rem]
+            sm:text-[0.56rem]
             md:text-[0.6rem]
             font-normal
-            tracking-[0.1em]
-            sm:tracking-[0.14em]
+            tracking-[0.11em]
+            sm:tracking-[0.13em]
             uppercase
             text-brand-gold
             mt-1
-            leading-tight
           "
         >
           Barristers &amp; Solicitors
@@ -491,4 +475,3 @@ function Logo() {
     </a>
   );
 }
-
